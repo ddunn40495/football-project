@@ -1,13 +1,20 @@
-#main-container {
+#main-container, #nav-font {
     text-align: center;
+    font-family: 'Poppins', sans-serif;
     
+    
+}
+.card-body, .card-color, #logos {
+    background-color: #cedebd;
 }
 
 #firstcol {
     height: 4.375rem;
     
 }
-
+.no-bullets {
+    list-style-type: none;
+}
 #seccol {
     height: 4.375rem;
     
@@ -19,7 +26,11 @@
 
 #logos {
 }
+body {
+    
 
+
+}
 #teams-headline {
 }
 .all-cols {
@@ -58,6 +69,12 @@
 #hot-team-select-team-img {
     height: 10rem;
     
+}
+
+#teams-headline {
+    background-image: url(https://static.dezeen.com/uploads/2016/08/designstudiopremier-league-rebrand-relaunch-logo-design-barclays-football_dezeen_slideshow-a.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .nested-rows {
@@ -138,7 +155,7 @@
     background-size: contain;
     background-image: url('../img/Liverpool_FC.svg');
     background-repeat: no-repeat;
-    background-position: center;
+    
 }
 
 .MCI-img {
@@ -194,17 +211,105 @@
     background-image: url('../img/Wolverhampton_Wanderers.svg');
     background-repeat: no-repeat;
 }
-
+#first-row {
+    height: 14.375rem;
+    margin-top: 2.8125rem;
+}
 #second-row {
     height: 21.875rem;
+    margin-top: 4.375rem;
+    
 }
-
+.top-row-stuff{
+    height: 11.25rem;
+}
 .next-game-font {
     font-size: 1rem;
 }
 
 #background-img {
-    background-image: url(https://d3j2s6hdd6a7rg.cloudfront.net/v2/uploads/media/default/0001/98/thumb_97717_default_news_size_5.jpeg);
+    background-image: url(https://besthqwallpapers.com/Temp/3-9-2020/anfield-liverpool-stadium-4k-football-stadium-liverpool-besthqwallpapers.com-1920x1080.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+
+.ARS-pic {
+    
+}
+
+.AVL-pic {
+  
+}
+
+.BHA-pic {
+   
+}
+
+.BUR-pic {
+    
+}
+
+.CHE-pic {
+    
+}
+
+.CRY-pic {
+    
+}
+
+.EVE-pic {
+   
+}
+
+.FUL-pic {
+    
+}
+
+.LEI-pic {
+    
+}
+
+.LEE-pic {
+    
+}
+
+.LIV-pic {
+
+}
+
+.MCI-pic {
+   
+}
+
+.MUN-pic {
+    
+}
+
+.NEW-pic {
+    
+}
+
+.SHU-pic {
+    
+}
+
+.SOU-pic {
+   
+}
+
+.TOT-pic {
+    
+}
+
+.WBA-pic {
+    
+}
+
+.WHU-pic {
+  
+}
+
+.WOL-pic {
+   
 }

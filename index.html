@@ -5,13 +5,38 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- StyleSheets -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.css" integrity="sha512-SUJFImtiT87gVCOXl3aGC00zfDl6ggYAw5+oheJvRJ8KBXZrr/TMISSdVJ5bBarbQDRC2pR5Kto3xTR0kpZInA==" crossorigin="anonymous" />
     <title>Football-Project</title>
   </head>
   <body>
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+
+    <div class="modal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Welcome to fantasy soccer test name</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Let start getting Data from last years champion Liverpool, Check Out Stats from Mo Salah as he had the highest Value Index in the league</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light" id="nav-font">
         <a class="navbar-brand" href="#">Football-Project</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#footballNavToggler" aria-controls="footballNavToggler" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -58,13 +83,14 @@
 
         <div class="container-fluid" id="main-container">
           <div id="background-img">
-            <div class="row all-rows">
-                <div class="col-md-3 all-cols card" id="teams-headline">
-                  <div class="card-body">
-                    <h3>hey</h3>
-                  </div>
-                </div>
-                <div class="col-md-9 all-cols card" id="logos">
+            <div class="row all-rows" id="first-row">
+              
+              <div class="col-md-3 all-cols  top-row-stuff" id="teams-headline">
+               
+              </div>
+              
+                <div class="col-md-9 all-cols card top-row-stuff" id="logos">
+                  <div id="logo-wrap">
                   <div class="card-body">
                     <div class="row nested-rows" id="first-row-logos">
                         <div class="col ARS-img logos-team-page" id="1">
@@ -135,48 +161,62 @@
                 </div>
               </div>
             </div>
+          </div>
             <div class="row all-rows" id="second-row">
-                <div class="col-md-3 all-cols card" id="col-test-one">
+                <div class="col-md-3 all-cols " id="col-test-one">
+                  <div class="card" id="nice-home-teams">
                   <div class="card-body">
                     <h3 id="strong-home-teams">Strongest Home Teams</h3>
                   </div>
                 </div>
-                <div class="col-md-9 all-cols card" id="col-test-two">
-                  <div class="card-body">
+                </div>
+                <div class="col-md-9 all-cols" id="col-test-two">
+                 
                   
                   <div class="row">
+                    <div class="card">
+                      <div class="card-body">
                     <div class="col" id="hot-team-select-team-one">
-                      <h2 id="hot-team-select-team-name"></h2>
+                      <h2 ></h2>
                       <div id="hot-team-select-team-img">
 
                       </div>
                       <div id="next-game-div">
                         <div>
-                          <h2 id="next-game">Next Game</h2>
+                          <h2 id="hot-team-select-team-name"></h2>
 
 
                         </div>
                       </div>
                
                     </div>
-                    <div class="col" id="team-img-div">
-
-                    </div>
-                    <div class="col" id="hot-team-select-team-two">
-                      <h3>Most creative players</h3>
-                    <div id="creative-players-list">
-                      
-                    </div>
-                      
-                    
-                    </div>
                   </div>
                 </div>
-              </div>
+                    <div class="col card-color" id="team-img-div">
+                      <div class="card card-color">
+                        <h3 class="card-body">Top goal scorers</h3>
+                        <div class="card-body" id="goals">
+
+                        </div>
+
+                      </div>
+
+                    </div>
+                    <div class="col card-color" id="hot-team-select-team-two">
+                      <div class="card card-color">
+                        <h3 class="card-color">Most creative players</h3>
+                        <div class="card-body" id="creative-players-list">
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                
+            </div>
         </div>
       </div>
         <div class="row all-rows" id="third-row">
-          <div class="col-md-2 list-group overflow-auto" id="players-list">
+          <div class="col-md-2 list-group overflow-auto card-color" id="players-list">
 
           </div>
           <div class="col-md-8">
@@ -194,9 +234,9 @@
             <canvas id="myChart" ></canvas>
 
           </div>
-          <div class="col-md-2">
+          <div class="col-md-2 card-color">
             <h3>Stats</h3>
-            <div class="accordion" id="stats">
+            <div class="accordion .card-color" id="stats">
               <div class="card">
                 <div class="card-header" id="headingOne">
                   <h2 class="mb-0">

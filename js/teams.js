@@ -75,8 +75,10 @@ let statLabelArray = ['Creativity', 'influence', 'threat', 'value_season', 'sele
 
     // $('#hot-team-select-team-name')
 
-//   });
-
+// //   });
+// $(document).ready(function(){
+//     $("#myModal").modal('show');
+// });
 
 
 
@@ -165,18 +167,18 @@ var settings = {
 
 
          
-        // console.log(liverpoolMatches)
-        let $nextOpp = null
-        // let $nextOppLocation = null
-        let $nextOppDate = null
-        if (liverpoolMatches[0].awayTeam.id === 64) {
-            $nextOpp = $(`<p class="next-game-font">@ ${liverpoolMatches[0].homeTeam.name}</p>`)
-            $nextOppDate = $(`<p class="next-game-font">${liverpoolMatches[0].season.startDate}</p>`)
-        } else {
-            $nextOpp = $(`<p class="next-game-font">VS ${liverpoolMatches[0].awayTeam.name}</p>`)
-            $nextOppDate = $(`<p class="next-game-font">${liverpoolMatches[0].season.startDate}</p>`)
-        }
-        $('#next-game').append($nextOpp, $nextOppDate)
+        // // console.log(liverpoolMatches)
+        // let $nextOpp = null
+        // // let $nextOppLocation = null
+        // let $nextOppDate = null
+        // if (liverpoolMatches[0].awayTeam.id === 64) {
+        //     $nextOpp = $(`<p class="next-game-font">@ ${liverpoolMatches[0].homeTeam.name}</p>`)
+        //     $nextOppDate = $(`<p class="next-game-font">${liverpoolMatches[0].season.startDate}</p>`)
+        // } else {
+        //     $nextOpp = $(`<p class="next-game-font">VS ${liverpoolMatches[0].awayTeam.name}</p>`)
+        //     $nextOppDate = $(`<p class="next-game-font">${liverpoolMatches[0].season.startDate}</p>`)
+        // }
+        // $('#next-game').append($nextOpp, $nextOppDate)
         
 
 
@@ -352,9 +354,9 @@ var settings = {
             let myChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['Creativity', 'influence', 'threat'],
+                    labels: ['Creativity', 'Influence', 'Threat'],
                     datasets: [{
-                        label: '# of Votes',
+                        label: 'Index',
                         data: grabPlayerStatArray(player),
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
@@ -481,10 +483,20 @@ var settings = {
                 let selectedTeamCreateArray = selectedTeamPlayerArray.sort((a, b) => a.creativity - b.creativity)
                 let selectedTeamInfluArray = selectedTeamPlayerArray.sort((a, b) => a.influence - b.influence)
 
+                let selectedTeamGoalsArray = selectedTeamPlayerArray.sort((a, b) => a.goals_scored - b.goals_scored)
+
+                const $hotTeamGoalList = $('<ul>').addClass('no-bullets')
+                const $hotTeamListGoalItemsOne = $('<li>').text(selectedTeamGoalsArray[selectedTeamGoalsArray.length - 1].first_name + ' ' + selectedTeamGoalsArray[selectedTeamGoalsArray.length -1].second_name + ' ' + selectedTeamGoalsArray[selectedTeamGoalsArray.length - 1].goals_scored + ' GOALS')
+        
+                const $hotTeamListGoalItemsTwo = $('<li>').text(selectedTeamGoalsArray[selectedTeamGoalsArray.length - 2].first_name + ' ' + selectedTeamGoalsArray[selectedTeamGoalsArray.length -2].second_name  + ' ' + selectedTeamGoalsArray[selectedTeamGoalsArray.length - 2].goals_scored + ' GOALS')
+        
+                const $hotTeamListGoalItemsThree = $('<li>').text(selectedTeamGoalsArray[selectedTeamGoalsArray.length - 3].first_name + ' ' + selectedTeamGoalsArray[selectedTeamGoalsArray.length -3].second_name  + ' ' + selectedTeamGoalsArray[selectedTeamGoalsArray.length - 3].goals_scored + ' GOALS')
+        
+
 
 
                 const $hotTeamName = $(`<h2>${selectedTeam.name}</h2>`)
-                const $hotTeamList = $('<ul>')
+                const $hotTeamList = $('<ul>').addClass('no-bullets')
                 const $hotTeamListItemsOne = $('<li>').text(selectedTeamCreateArray[selectedTeamCreateArray.length - 1].first_name + ' ' + selectedTeamCreateArray[selectedTeamCreateArray.length -1].second_name)
         
                 const $hotTeamListItemsTwo = $('<li>').text(selectedTeamCreateArray[selectedTeamCreateArray.length - 2].first_name + ' ' + selectedTeamCreateArray[selectedTeamCreateArray.length -2].second_name)
@@ -498,7 +510,8 @@ var settings = {
                 const $hotTeamListItemsSix = $('<li>').text(selectedTeamCreateArray[selectedTeamCreateArray.length - 6].first_name + ' ' + selectedTeamCreateArray[selectedTeamCreateArray.length -6].second_name)
 
 
-
+                $('#goals').append($hotTeamGoalList)
+                $hotTeamGoalList.append($hotTeamListGoalItemsOne, $hotTeamListGoalItemsTwo, $hotTeamListGoalItemsThree)
                 $('#hot-team-select-team-img').attr('class', selectedTeam.short_name + '-img')
                 $('#hot-team-select-team-name').append($hotTeamName)
                 $('#creative-players-list').append($hotTeamList)
@@ -530,6 +543,7 @@ var settings = {
         $('#hot-team-select-team-img').empty()
         $('#creative-players-list').empty()
         $('#players-list').empty()
+        $('#goals').empty()
         renderTeam(selectedTeamCall)
 
 
@@ -622,7 +636,7 @@ var settings = {
 
 
 
-
+     renderTeam(14)
 
 
 
