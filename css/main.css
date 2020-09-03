@@ -1,0 +1,210 @@
+#main-container {
+    text-align: center;
+    
+}
+
+#firstcol {
+    height: 4.375rem;
+    
+}
+
+#seccol {
+    height: 4.375rem;
+    
+}
+
+#thridcol {
+    height: 6rem;
+}
+
+#logos {
+}
+
+#teams-headline {
+}
+.all-cols {
+    height: 6rem;
+}
+#col-test-one {
+    height: 21.875rem;
+}
+    
+#col-test-two {
+    height: 21.875rem;
+}
+#row1, #row2, #row3, .all-rows {
+    height:6.875rem;
+}
+
+#header-box {
+    height: 4.375rem;
+}
+
+
+#next-game {
+    height: 4.375rem;
+    
+}
+
+#next-game-home-img-div, #next-game-away-img-div {
+    background-size: contain;
+    background-image: url('../img/Fulham_fc.svg');
+
+}
+.logos-team-page {
+    height: 2rem;
+}
+
+#hot-team-select-team-img {
+    height: 10rem;
+    
+}
+
+.nested-rows {
+    height: 3rem;
+}
+
+.nested-cols {
+    height: 1.5rem;
+}
+
+.test-img {
+    background-size: contain;
+    background-image: url('../img/Fulham_fc.svg');
+    background-repeat: no-repeat;
+}
+
+.ARS-img {
+    background-size: contain;
+    background-image: url('../img/Arsenal_FC.svg');
+    background-repeat: no-repeat;
+}
+
+.AVL-img {
+    background-size: contain;
+    background-image: url('../img/Aston_Villa_logo.svg');
+    background-repeat: no-repeat;
+}
+
+.BHA-img {
+    background-size: contain;
+    background-image: url('../img/Brighton_&_Hove_Albion_logo.svg');
+    background-repeat: no-repeat;
+}
+
+.BUR-img {
+    background-size: contain;
+    background-image: url('../img/Burnley_F.C._Logo.svg');
+    background-repeat: no-repeat;
+}
+
+.CHE-img {
+    background-size: contain;
+    background-image: url('../img/Chelsea_FC.svg');
+    background-repeat: no-repeat;
+}
+
+.CRY-img {
+    background-size: contain;
+    background-image: url('../img/Crystal_Palace_FC_logo.svg');
+    background-repeat: no-repeat;
+}
+
+.EVE-img {
+    background-size: contain;
+    background-image: url('../img/Everton_FC_logo.svg');
+    background-repeat: no-repeat;
+}
+
+.FUL-img {
+    background-size: contain;
+    background-image: url('../img/Fulham_fc.svg');
+    background-repeat: no-repeat;
+}
+
+.LEI-img {
+    background-size: contain;
+    background-image: url('../img/Leicester_City_crest.svg');
+    background-repeat: no-repeat;
+}
+
+.LEE-img {
+    background-size: contain;
+    background-image: url('../img/Leeds_United.svg');
+    background-repeat: no-repeat;
+}
+
+.LIV-img {
+    background-size: contain;
+    background-image: url('../img/Liverpool_FC.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.MCI-img {
+    background-size: contain;
+    background-image: url('../img/Manchester_City_FC_badge.svg');
+    background-repeat: no-repeat;
+}
+
+.MUN-img {
+    background-size: contain;
+    background-image: url('../img/Manchester_United_FC_crest.svg');
+    background-repeat: no-repeat;
+}
+
+.NEW-img {
+    background-size: contain;
+    background-image: url('../img/Newcastle_United_Logo.svg');
+    background-repeat: no-repeat;
+}
+
+.SHU-img {
+    background-size: contain;
+    background-image: url('../img/Sheffield_United_FC_logo.svg');
+    background-repeat: no-repeat;
+}
+
+.SOU-img {
+    background-size: contain;
+    background-image: url('../img/FC_Southampton.svg');
+    background-repeat: no-repeat;
+}
+
+.TOT-img {
+    background-size: contain;
+    background-image: url('../img/Tottenham_Hotspur.svg');
+    background-repeat: no-repeat;
+}
+
+.WBA-img {
+    background-size: contain;
+    background-image: url('../img/West_Bromwich_Albion.svg');
+    background-repeat: no-repeat;
+}
+
+.WHU-img {
+    background-size: contain;
+    background-image: url('../img/West_Ham_United_FC_logo.svg');
+    background-repeat: no-repeat;
+}
+
+.WOL-img {
+    background-size: contain;
+    background-image: url('../img/Wolverhampton_Wanderers.svg');
+    background-repeat: no-repeat;
+}
+
+#second-row {
+    height: 21.875rem;
+}
+
+.next-game-font {
+    font-size: 1rem;
+}
+
+#background-img {
+    background-image: url(https://d3j2s6hdd6a7rg.cloudfront.net/v2/uploads/media/default/0001/98/thumb_97717_default_news_size_5.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}

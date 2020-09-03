@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- StyleSheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.css" integrity="sha512-SUJFImtiT87gVCOXl3aGC00zfDl6ggYAw5+oheJvRJ8KBXZrr/TMISSdVJ5bBarbQDRC2pR5Kto3xTR0kpZInA==" crossorigin="anonymous" />
+    <title>Football-Project</title>
+  </head>
+  <body>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Football-Project</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#footballNavToggler" aria-controls="footballNavToggler" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="footballNavToggler">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Teams
+              </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="team-dropdown">
+                  <a class="dropdown-item" href="#">Arsenal</a>
+                  <a class="dropdown-item" href="#">Aston Villa</a>
+                  <a class="dropdown-item" href="#">Chelsea</a>
+                  <a class="dropdown-item" href="#">Everton</a>
+                  <a class="dropdown-item" href="#">Fulham</a>
+                  <a class="dropdown-item" href="#">Liverpool</a>
+                  <a class="dropdown-item" href="#">Man City</a>
+                  <a class="dropdown-item" href="#">Man United</a>
+                  <a class="dropdown-item" href="#">Newcastle</a>
+                  <a class="dropdown-item" href="#">Tottenham</a>
+                  <a class="dropdown-item" href="#">West Brom</a>
+                  <a class="dropdown-item" href="#">Wolverhampton</a>
+                  <a class="dropdown-item" href="#">Burnley</a>
+                  <a class="dropdown-item" href="#">Leicester City</a>
+                  <a class="dropdown-item" href="#">Southampton</a>
+                  <a class="dropdown-item" href="#">Leeds United</a>
+                  <a class="dropdown-item" href="#">Crystal Palace</a>
+                  <a class="dropdown-item" href="#">Sheffield Utd</a>
+                  <a class="dropdown-item" href="#">Brighton Hove</a>
+                  <a class="dropdown-item" href="#">West Ham</a>
+              </div>
+            </li>
+            <li class="nav-item disabled">
+              <a class="nav-link" href="#">Players</a>
+            </li>
+
+          </ul>
+          
+        </div>
+      </nav>
+  
+
+        <div class="container-fluid" id="main-container">
+          <div id="background-img">
+            <div class="row all-rows">
+                <div class="col-md-3 all-cols card" id="teams-headline">
+                  <div class="card-body">
+                    <h3>hey</h3>
+                  </div>
+                </div>
+                <div class="col-md-9 all-cols card" id="logos">
+                  <div class="card-body">
+                    <div class="row nested-rows" id="first-row-logos">
+                        <div class="col ARS-img logos-team-page" id="1">
+
+                        </div>
+                        <div class="col AVL-img logos-team-page" id="2">
+
+                        </div>
+                        <div class="col BHA-img logos-team-page" id="3">
+
+                        </div>
+                        <div class="col BUR-img logos-team-page" id="4">
+
+                        </div>
+                        <div class="col CHE-img logos-team-page" id="5">
+
+                        </div>
+                        <div class="col CRY-img logos-team-page" id="6">
+
+                        </div>
+                        <div class="col EVE-img logos-team-page" id="7">
+
+                        </div>
+                        <div class="col FUL-img logos-team-page" id="8">
+
+                        </div>
+                        <div class="col LEI-img logos-team-page" id="9">
+
+                        </div>
+                        <div class="col LEE-img logos-team-page" id="10">
+
+                        </div>
+
+                    </div>
+                    <div class="row nested-rows">
+                        <div class="col LIV-img logos-team-page" id="11">
+
+                        </div>
+                        <div class="col MCI-img logos-team-page" id="12">
+
+                        </div>
+                        <div class="col MUN-img logos-team-page" id="13">
+
+                        </div>
+                        <div class="col NEW-img logos-team-page" id="14">
+
+                        </div>
+                        <div class="col SHU-img logos-team-page" id="15">
+
+                        </div>
+                        <div class="col SOU-img logos-team-page" id="16">
+
+                        </div>
+                        <div class="col TOT-img logos-team-page" id="17">
+
+                        </div>
+                        <div class="col WBA-img logos-team-page" id="18">
+
+                        </div>
+                        <div class="col WHU-img logos-team-page" id="19">
+
+                        </div>
+                        <div class="col WOL-img logos-team-page" id="20">
+
+                        </div>
+
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="row all-rows" id="second-row">
+                <div class="col-md-3 all-cols card" id="col-test-one">
+                  <div class="card-body">
+                    <h3 id="strong-home-teams">Strongest Home Teams</h3>
+                  </div>
+                </div>
+                <div class="col-md-9 all-cols card" id="col-test-two">
+                  <div class="card-body">
+                  
+                  <div class="row">
+                    <div class="col" id="hot-team-select-team-one">
+                      <h2 id="hot-team-select-team-name"></h2>
+                      <div id="hot-team-select-team-img">
+
+                      </div>
+                      <div id="next-game-div">
+                        <div>
+                          <h2 id="next-game">Next Game</h2>
+
+
+                        </div>
+                      </div>
+               
+                    </div>
+                    <div class="col" id="team-img-div">
+
+                    </div>
+                    <div class="col" id="hot-team-select-team-two">
+                      <h3>Most creative players</h3>
+                    <div id="creative-players-list">
+                      
+                    </div>
+                      
+                    
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+      </div>
+        <div class="row all-rows" id="third-row">
+          <div class="col-md-2 list-group overflow-auto" id="players-list">
+
+          </div>
+          <div class="col-md-8">
+
+            <nav class="navbar navbar-light bg-light">
+              <form class="form-inline">
+                <h3 class="navbar-text nav-item" id="player-headline">
+                  
+                </h3>
+                <h3 class="navbar-text nav-item" id="player-headline-two">
+                  
+                </h3>
+              </form>
+            </nav>
+            <canvas id="myChart" ></canvas>
+
+          </div>
+          <div class="col-md-2">
+            <h3>Stats</h3>
+            <div class="accordion" id="stats">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Season Totals
+                    </button>
+                  </h2>
+                </div>
+            
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#stats">
+                  <div class="card-body stats-empty" id="season-total-body">
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Fantasy Data
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#stats">
+                  <div class="card-body stats-empty" id="fantasy-data-body">
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Fantasy Indexs
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#stats">
+                  <div class="card-body stats-empty" id="fantasy-index-body">
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            
+
+          </div>
+        </div> 
+    
+
+    <!-- Script Tags -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js" integrity="sha512-G8JE1Xbr0egZE5gNGyUm1fF764iHVfRXshIoUWCTPAbKkkItp/6qal5YAHXrxEu4HNfPTQs6HOu3D5vCGS1j3w==" crossorigin="anonymous"></script>
+    <script src="js/teams.js"></script>
+  </body>
+</html>
