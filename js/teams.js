@@ -1,4 +1,6 @@
-
+// =======================================
+//              VARIABLES
+// =======================================
 let allTeamsFantasy = []
 let allPlayersFantasy = []
 let allEplMatches = []
@@ -56,62 +58,43 @@ let playerParam = 0
 
 let statLabelArray = ['Creativity', 'influence', 'threat', 'value_season', 'selected_by_percent']
 
-// var settings = {
-//     "url": "https://api.football-data.org/v2/competitions/PL/teams",
-//     "method": "GET",
-//     "timeout": 0,
-//     "headers": {
-//       "X-Auth-Token": "fdf2e3c8a1194516969b6654051e23e2"
-//     },
-//   };
-  
-//   $.ajax(settings).done(function (response) {
-//     console.log(response)
-    // for (let i = 0; i < response.teams.length; i++) {
-    //     const $newA = $(`<a class="dropdown-item" href="#">${response.teams[i].shortName}</a>`)
-    //     $('#team-dropdown').append($newA)
-        
-    // }
-
-    // $('#hot-team-select-team-name')
-
-// //   });
-// $(document).ready(function(){
-//     $("#myModal").modal('show');
-// });
 
 
 
+// =======================================
+//       MATCH-DATA AJAX CALL 
+// =======================================
 
-
-var settings = {
-    "url": "https://cors-anywhere.herokuapp.com/https://api.football-data.org/v2/competitions/PL/matches?status=SCHEDULED",
-    "method": "GET",
-    "timeout": 0,
-    "headers": {
-      "X-Auth-Token": "fdf2e3c8a1194516969b6654051e23e2"
-    },
-  };
+    var settings = {
+        "url": "https://cors-anywhere.herokuapp.com/https://api.football-data.org/v2/competitions/PL/matches?status=SCHEDULED",
+        "method": "GET",
+        "timeout": 0,
+        "headers": {
+        "X-Auth-Token": "fdf2e3c8a1194516969b6654051e23e2"
+        },
+    };
   
     $.ajax(settings).done(function (response) {
-
 
         homeTeamId = response.matches[0].homeTeam.id
         awayTeamId = response.matches[0].awayTeam.id
 
        
-
         $('#next-game-home-name-div').html(`<p>${response.matches[0].homeTeam.name}</p>`)
         $('#next-game-away-name-div').html(`<p>${response.matches[0].awayTeam.name}</p>`)
         $('#next-game-match-info-div').html(`<p>${response.matches[0].season.startDate}</p>`)
 
-
+        /* =======================================
+            PUTTING ALL LEAGUE MATCHES IN ARRAY
+        ========================================= */
 
         for (let i = 0; i < response.matches.length; i++) {
             allEplMatches.push(response.matches[i])
             
         }
-
+        /* =============================================
+            PUTTING EACH TEAM MATCHES IN SEPERATE ARRAY
+        ================================================*/
         for (let i = 0; i < response.matches.length; i++) {
             if (response.matches[i].awayTeam.id === 57 || response.matches[i].homeTeam.id === 57 ) {
                 arsenalMatches.push(response.matches[i])
@@ -158,34 +141,7 @@ var settings = {
             } else {
 
             }
-
-            
-            
         }
-
-
-
-
-         
-        // // console.log(liverpoolMatches)
-        // let $nextOpp = null
-        // // let $nextOppLocation = null
-        // let $nextOppDate = null
-        // if (liverpoolMatches[0].awayTeam.id === 64) {
-        //     $nextOpp = $(`<p class="next-game-font">@ ${liverpoolMatches[0].homeTeam.name}</p>`)
-        //     $nextOppDate = $(`<p class="next-game-font">${liverpoolMatches[0].season.startDate}</p>`)
-        // } else {
-        //     $nextOpp = $(`<p class="next-game-font">VS ${liverpoolMatches[0].awayTeam.name}</p>`)
-        //     $nextOppDate = $(`<p class="next-game-font">${liverpoolMatches[0].season.startDate}</p>`)
-        // }
-        // $('#next-game').append($nextOpp, $nextOppDate)
-        
-
-
-
-
-        
-
     });
     
 
@@ -197,139 +153,124 @@ var settings = {
 
 
 
+     /* =================================================
+   
+                FANTASY AJAX CALL
+                ALL PLAYER STATS 
 
-var settings = {
-    "url": "https://cors-anywhere.herokuapp.com/https://fantasy.premierleague.com/api/bootstrap-static/",
-    "method": "GET",
-    "timeout": 0,
-  };
+   ===================================================*/
+        var settings = {
+            "url": "https://cors-anywhere.herokuapp.com/https://fantasy.premierleague.com/api/bootstrap-static/",
+            "method": "GET",
+            "timeout": 0,
+        };
   
-  $.ajax(settings).done(function (data) {
-      for (let i = 0; i < data.teams.length; i++) {
-          allTeamsFantasy.push(data.teams[i])
-          
-      }
-    //   console.log(allTeamsFantasy)
-    //   console.log(data.teams)
-
-      let teamsByDefHomeIndex = allTeamsFantasy.sort((a, b) => a.strength_defence_home - b.strength_defence_home)
-
-
-    //   console.log(teamsByDefHomeIndex)
-  
-      let $firstHomeTeam = $(`<h4>${teamsByDefHomeIndex[19].name}</h4>`)
-      let $secondHomeTeam = $(`<h4>${teamsByDefHomeIndex[18].name}</h4>`)
-      let $thridHomeTeam = $(`<h4>${teamsByDefHomeIndex[17].name}</h4>`)
-      let $fourthHomeTeam = $(`<h4>${teamsByDefHomeIndex[16].name}</h4>`)
-      let $fiveHomeTeam = $(`<h4>${teamsByDefHomeIndex[15].name}</h4>`)
-      $('#strong-home-teams').append($firstHomeTeam, $secondHomeTeam, $thridHomeTeam, $fourthHomeTeam, $fiveHomeTeam)
-
-      for (let i = 0; i < data.elements.length; i++) {
-          allPlayersFantasy.push(data.elements[i])
-          
-      }
-
-    //   let playersByCreate = allPlayersFantasy.sort((a, b) => a.yellow_cards - b.yellow_cards)
-
-    //   console.log(playersByCreate)
-    //   allPlayersFantasy.sort(function (a, b) {
-    //     return a.value - b.value;
-    //   });
-
-
-    for (let i = 0; i < data.elements.length; i++) {
+        $.ajax(settings).done(function (data) {
+        /* =================================================
+        PUTTING ALL TEAM OBJECTS IN ONE ARRAY
+    ===================================================*/
+        for (let i = 0; i < data.teams.length; i++) {
+            allTeamsFantasy.push(data.teams[i])
+        }
         
+    /* =================================================
+        SORTING TEAMS BY HOME RATING
+    ===================================================*/
+        let teamsByDefHomeIndex = allTeamsFantasy.sort((a, b) => a.strength_defence_home - b.strength_defence_home)
 
-       if (data.elements[i].team == 1) {
-           arsenalFantasy.push(data.elements[i])
-       } else if (data.elements[i].team == 2) {
-        villaFantasy.push(data.elements[i])
-       }
-       else if (data.elements[i].team == 3) {
-           brightonFantasy.push(data.elements[i])
-        }
-        else if (data.elements[i].team == 4) {
-            burnelyFantasy.push(data.elements[i])
-        }
-        else if (data.elements[i].team == 5) {
-            chelseaFantasy.push(data.elements[i])
-        }
-        else if (data.elements[i].team == 6) {
-            palaceFantasy.push(data.elements[i])
-        }
-        else if (data.elements[i].team == 7) {
-            evertonFantasy.push(data.elements[i])
-        }
-        else if (data.elements[i].team == 8) {
-            fulhamFantasy.push(data.elements[i])
-        }
-        else if (data.elements[i].team == 9) {
-            leicesterFantasy.push(data.elements[i])
-        }
-        else if (data.elements[i].team == 10) {
-            leedsFantasy.push(data.elements[i])
-        }
-        else if (data.elements[i].team == 11) {
-            liverpoolFantasy.push(data.elements[i])
-        }
-        else if (data.elements[i].team == 12) {
-            cityFantasy.push(data.elements[i])
-        }
-        else if (data.elements[i].team == 13) {
-            unitedFantasy.push(data.elements[i])
-        }
-        else if (data.elements[i].team == 14) {
-            newcastleFantasy.push(data.elements[i])
-        }
-        else if (data.elements[i].team == 15) {
-            sheffieldFantasy.push(data.elements[i])
-        }
-        else if (data.elements[i].team == 16) {
-            southamptonFantasy.push(data.elements[i])
-        }
-        else if (data.elements[i].team == 17) {
-            spursFantasy.push(data.elements[i])
-        }
-        else if (data.elements[i].team == 18) {
-            westBromFantasy.push(data.elements[i])
-        }
-        else if (data.elements[i].team == 19) {
-            westHamFantasy.push(data.elements[i])
-        }
-        else if (data.elements[i].team == 20) {
-            wolvesFantasy.push(data.elements[i])
-        }
+
+        //   console.log(teamsByDefHomeIndex)
+        /* =================================================
+        APPENDING TOP 5 HOME TEAMS TO DOM
+    ===================================================*/
+        let $firstHomeTeam = $(`<h4>${teamsByDefHomeIndex[19].name}</h4>`)
+        let $secondHomeTeam = $(`<h4>${teamsByDefHomeIndex[18].name}</h4>`)
+        let $thridHomeTeam = $(`<h4>${teamsByDefHomeIndex[17].name}</h4>`)
+        let $fourthHomeTeam = $(`<h4>${teamsByDefHomeIndex[16].name}</h4>`)
+        let $fiveHomeTeam = $(`<h4>${teamsByDefHomeIndex[15].name}</h4>`)
+        $('#strong-home-teams').append($firstHomeTeam, $secondHomeTeam, $thridHomeTeam, $fourthHomeTeam, $fiveHomeTeam)
+    /* =================================================
+        PUTTING ALL PLAYER OBJECTS IN ONE ARRAY
+    ===================================================*/
+        for (let i = 0; i < data.elements.length; i++) {
+            allPlayersFantasy.push(data.elements[i])
             
         }
 
-        // console.log(arsenalFantasy)
-        // console.log(villaFantasy)
-        // console.log(brightonFantasy)
-        // console.log(burnelyFantasy)
-        // console.log(chelseaFantasy)
-        // console.log(palaceFantasy)
-        // console.log(evertonFantasy)
-        // console.log(fulhamFantasy)
-        // console.log(leicesterFantasy)
-        // console.log(leedsFantasy)
-        // console.log(liverpoolFantasy)
-        // console.log(cityFantasy)
-        // console.log(unitedFantasy)
-        // console.log(newcastleFantasy)
-        // console.log(sheffieldFantasy)
-        // console.log(southamptonFantasy)
-        // console.log(spursFantasy)
-        // console.log(westBromFantasy)
-        // console.log(westHamFantasy)
-        // console.log(wolvesFantasy)
-        // console.log(allTeamsFantasy)
-        // console.log(allPlayersFantasy)
-        
-        // let liverpoolCreateArray = liverpoolFantasy.sort((a, b) => a.creativity - b.creativity)
-        // let liverpoolInfluArray = liverpoolFantasy.sort((a, b) => a.influence - b.influence)
+        //   let playersByCreate = allPlayersFantasy.sort((a, b) => a.yellow_cards - b.yellow_cards)
 
-        // console.log(liverpoolCreateArray)
-        // console.log(liverpoolInfluArray)
+        //   console.log(playersByCreate)
+        //   allPlayersFantasy.sort(function (a, b) {
+        //     return a.value - b.value;
+        //   });
+
+    /* ===============================================================
+        FILTER ALL PLAYER OBJECTS BY TEAM PUT IN SEPERATE TEAM ARRAYS
+    ==============================================================*/
+        for (let i = 0; i < data.elements.length; i++) {
+            
+            if (data.elements[i].team == 1) {
+                arsenalFantasy.push(data.elements[i])
+            } else if (data.elements[i].team == 2) {
+                villaFantasy.push(data.elements[i])
+            }
+            else if (data.elements[i].team == 3) {
+            brightonFantasy.push(data.elements[i])
+            }
+            else if (data.elements[i].team == 4) {
+                burnelyFantasy.push(data.elements[i])
+            }
+            else if (data.elements[i].team == 5) {
+                chelseaFantasy.push(data.elements[i])
+            }
+            else if (data.elements[i].team == 6) {
+                palaceFantasy.push(data.elements[i])
+            }
+            else if (data.elements[i].team == 7) {
+                evertonFantasy.push(data.elements[i])
+            }
+            else if (data.elements[i].team == 8) {
+                fulhamFantasy.push(data.elements[i])
+            }
+            else if (data.elements[i].team == 9) {
+                leicesterFantasy.push(data.elements[i])
+            }
+            else if (data.elements[i].team == 10) {
+                leedsFantasy.push(data.elements[i])
+            }
+            else if (data.elements[i].team == 11) {
+                liverpoolFantasy.push(data.elements[i])
+            }
+            else if (data.elements[i].team == 12) {
+                cityFantasy.push(data.elements[i])
+            }
+            else if (data.elements[i].team == 13) {
+                unitedFantasy.push(data.elements[i])
+            }
+            else if (data.elements[i].team == 14) {
+                newcastleFantasy.push(data.elements[i])
+            }
+            else if (data.elements[i].team == 15) {
+                sheffieldFantasy.push(data.elements[i])
+            }
+            else if (data.elements[i].team == 16) {
+                southamptonFantasy.push(data.elements[i])
+            }
+            else if (data.elements[i].team == 17) {
+                spursFantasy.push(data.elements[i])
+            }
+            else if (data.elements[i].team == 18) {
+                westBromFantasy.push(data.elements[i])
+            }
+            else if (data.elements[i].team == 19) {
+                westHamFantasy.push(data.elements[i])
+            }
+            else if (data.elements[i].team == 20) {
+                wolvesFantasy.push(data.elements[i])
+            }
+                
+            }
+
         const grabPlayerStatArray = (param) => {
             let currentStat = []
             // event.preventDefault()
@@ -547,7 +488,7 @@ var settings = {
         renderTeam(selectedTeamCall)
 
 
-        $('button').on('click', (event) => {
+        $('.player-list-item').on('click', (event) => {
             currentPlayerID = $(event.target).attr("id")
             console.log($(event.target))
             console.log($(event.currentTarget))
@@ -650,22 +591,52 @@ var settings = {
 
 
         
-$(()=>{
+  /* =================================================
+    UNUSED CODE
+   ===================================================*/
 
 
+        // console.log(arsenalFantasy)
+        // console.log(villaFantasy)
+        // console.log(brightonFantasy)
+        // console.log(burnelyFantasy)
+        // console.log(chelseaFantasy)
+        // console.log(palaceFantasy)
+        // console.log(evertonFantasy)
+        // console.log(fulhamFantasy)
+        // console.log(leicesterFantasy)
+        // console.log(leedsFantasy)
+        // console.log(liverpoolFantasy)
+        // console.log(cityFantasy)
+        // console.log(unitedFantasy)
+        // console.log(newcastleFantasy)
+        // console.log(sheffieldFantasy)
+        // console.log(southamptonFantasy)
+        // console.log(spursFantasy)
+        // console.log(westBromFantasy)
+        // console.log(westHamFantasy)
+        // console.log(wolvesFantasy)
+        // console.log(allTeamsFantasy)
+        // console.log(allPlayersFantasy)
+        
+        // let liverpoolCreateArray = liverpoolFantasy.sort((a, b) => a.creativity - b.creativity)
+        // let liverpoolInfluArray = liverpoolFantasy.sort((a, b) => a.influence - b.influence)
 
-
-
-
-
-
-
-
-})
-       
-
-
-
+        // console.log(liverpoolCreateArray)
+        // console.log(liverpoolInfluArray)
+                // // console.log(liverpoolMatches)
+        // let $nextOpp = null
+        // // let $nextOppLocation = null
+        // let $nextOppDate = null
+        // if (liverpoolMatches[0].awayTeam.id === 64) {
+        //     $nextOpp = $(`<p class="next-game-font">@ ${liverpoolMatches[0].homeTeam.name}</p>`)
+        //     $nextOppDate = $(`<p class="next-game-font">${liverpoolMatches[0].season.startDate}</p>`)
+        // } else {
+        //     $nextOpp = $(`<p class="next-game-font">VS ${liverpoolMatches[0].awayTeam.name}</p>`)
+        //     $nextOppDate = $(`<p class="next-game-font">${liverpoolMatches[0].season.startDate}</p>`)
+        // }
+        // $('#next-game').append($nextOpp, $nextOppDate)
+        
 
 
 
