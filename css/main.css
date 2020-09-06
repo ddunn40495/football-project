@@ -233,6 +233,10 @@ body {
     background-size: cover;
 }
 
+.test {
+    height: 300px;
+    width: 300px;
+}
 
 .ARS-pic {
     
